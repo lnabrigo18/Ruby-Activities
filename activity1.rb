@@ -13,11 +13,23 @@ puts h
 puts ""
 
 # No.3
-contacts = ["Analyn Cajocson", "AvionSchool"]
-contact_data = [["ana@email.com", "123 Main st.", "555-123-4567"],["avion@email.com", "404 Not Found Dr.", "123-234-3454"]]
+contact_data = [["ana@email.com", "123 Main st.", "555-123-4567"], ["avion@email.com", "404 Not Found Dr.", "123-234-3454"]]
 
-hash = Hash[contacts.collect {|item| [item, contact_data]}]
-puts hash
+contacts = { 
+	"Analyn Cajocson" => {},
+	"Avion School" => {}
+}
+
+i = 0
+
+contacts.each do |key, value|
+    contacts[key][:email] = contact_data[i][0]
+    contacts[key][:address] = contact_data[i][1]
+    contacts[key][:phone] = contact_data[i][2]
+    i += 1
+end
+
+puts contacts
 puts ""
 
 # No.4
