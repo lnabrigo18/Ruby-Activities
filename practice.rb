@@ -1,32 +1,47 @@
-class Customer
-    def initialize(name, item_no, amount, card_points=false)
-        @name = name
-        @item_no = item_no
-        @amount = amount
-        @card_points = card_points
+class Box
+    def initialize(shape, length, width, height)
+        @shape = shape
+        @length = length
+        @width = width
+        @height = height
     end
 
-    def display_details()
-        puts "Customer Name: #@name"
-        puts "Purchased Item No.: #@item_no"
-        puts "Amount of Purchased: Php #@amount"
-        if get_points == 10
-            card_value = @amount * 0.10
-            puts "Gained card points: #{card_value}"
-        else
-            puts "Gained card points: No card"   
-        end
+    def details
+        puts "Shape: #@shape"
+        puts "Dimensions: #@length x #@width x #@height inches"
+        puts "Area: Calculations for Square and Rectangular box only!"
+        puts "Volume: Calculations for Square and Rectangular box only!"
+        puts ""
     end
-
-    private
-
-    def get_points
-        points = @card_points ? 10 : 0
+end
+class Square < Box
+    def details
+        puts "Shape: #@shape"
+        puts "Dimensions: #@length x #@width x #@height inches"
+        a = @length ** 2
+        puts "Area: #{a} square inches"
+        v = @length ** 3
+        puts "Volume: #{v} cubic inches"
+        puts ""
     end
 end
 
-customer_1 = Customer.new("Yen", 2, 275.50, true )
-customer_2 = Customer.new("Nath", 7, 175.75, false)
+class Rectangle < Box
+    def details
+        puts "Shape: #@shape"
+        puts "Dimensions: #@length x #@width x #@height inches"
+        a = @length * @width
+        puts "Area: #{a} square inches"
+        v = @length * @width * @height
+        puts "Volume: #{v} cubic inches"
+        puts ""
+    end
+end
 
-customer_1.display_details()
-customer_2.display_details()
+box_1 = Square.new("Square", 5, 5, 5)
+box_2 = Rectangle.new("Rectangular", 10, 7, 5)
+box_3 = Box.new("Triangular", 10, 11, 3)
+
+box_1.details
+box_2.details
+box_3.details
