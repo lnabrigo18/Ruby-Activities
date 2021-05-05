@@ -1,47 +1,41 @@
-class Box
-    def initialize(shape, length, width, height)
-        @shape = shape
-        @length = length
-        @width = width
-        @height = height
-    end
-
-    def details
-        puts "Shape: #@shape"
-        puts "Dimensions: #@length x #@width x #@height inches"
-        puts "Area: Calculations for Square and Rectangular box only!"
-        puts "Volume: Calculations for Square and Rectangular box only!"
-        puts ""
-    end
-end
-class Square < Box
-    def details
-        puts "Shape: #@shape"
-        puts "Dimensions: #@length x #@width x #@height inches"
-        a = @length ** 2
-        puts "Area: #{a} square inches"
-        v = @length ** 3
-        puts "Volume: #{v} cubic inches"
-        puts ""
+class Schedule
+    
+    def time(schedule)
+        schedule.time
     end
 end
 
-class Rectangle < Box
-    def details
-        puts "Shape: #@shape"
-        puts "Dimensions: #@length x #@width x #@height inches"
-        a = @length * @width
-        puts "Area: #{a} square inches"
-        v = @length * @width * @height
-        puts "Volume: #{v} cubic inches"
-        puts ""
+class First_Sched
+    
+    def time
+        puts "Morning Schedule"
+        puts "Shift time: 7:00AM - 4:00PM"
     end
 end
 
-box_1 = Square.new("Square", 5, 5, 5)
-box_2 = Rectangle.new("Rectangular", 10, 7, 5)
-box_3 = Box.new("Triangular", 10, 11, 3)
+class Second_Sched
 
-box_1.details
-box_2.details
-box_3.details
+    def time
+        puts "Mid-Shift Schedule"
+        puts "Shift time: 12:00NN - 8:00PM"
+    end
+end
+
+class Third_Sched
+
+    def time
+        puts "Evening Schedule"
+        puts "Shift time: 4:00NN - 12:00MN"
+    end
+end  
+
+work_schedule = Schedule.new
+first = First_Sched.new
+work_schedule.time(first)
+puts ""
+second = Second_Sched.new
+work_schedule.time(second)
+puts ""
+third = Third_Sched.new
+work_schedule.time(third)
+puts ""
