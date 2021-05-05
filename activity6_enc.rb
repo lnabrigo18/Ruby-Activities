@@ -14,6 +14,8 @@ end
 
 customer_1 = Customer.new("Yen", 2, 275.50 )
 customer_2 = Customer.new("Nath", 7, 175.75)
+customer_3 = Customer.new("Chan", 5, 521.25, false)
 
 customer_1.display_details()
 customer_2.display_details()
+customer_3.display_details()
