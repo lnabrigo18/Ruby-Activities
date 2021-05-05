@@ -1,22 +1,20 @@
-class Profile
-    attr_reader :full_name, :age, :address, :work
-    attr_writer :full_name, :age, :work
-
-    def initialize(full_name, age, address, work)
-        @full_name = full_name
-        @age = age
-        @address = address
-        @work = work
+class Animal 
+    def speak
+        "Hello"
     end
 end
 
-my_profile = Profile.new('Juan', 18, 'Bulacan', 'Instructor')
+class Dog < Animal
+    def speak
+        puts "Aww"
+        walk
+    end
 
-my_profile.full_name = 'Juan Cruz'
-my_profile.age = 25
-my_profile.work = 'Software Engineer'
+private
+def walk
+    puts "Walking"
+end
+end
 
-puts my_profile.full_name
-puts my_profile.age
-puts my_profile.work
-puts my_profile.address
+boni = Dog.new
+boni.speak
