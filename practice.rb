@@ -1,20 +1,23 @@
-class Animal 
-    def speak
-        "Hello"
+class Confection
+    def prepare
+    "Baking at 350 degrees for 25 minutes."
     end
 end
 
-class Dog < Animal
-    def speak
-        puts "Aww"
-        walk
+class Cupcake < Confection
+    def prepare
+        puts super + " " + "Applying frosting."
     end
-
-private
-def walk
-    puts "Walking"
-end
 end
 
-boni = Dog.new
-boni.speak
+class Banana_Cake < Confection
+    def prepare
+        puts super
+    end
+end
+
+banana_cake = Banana_Cake.new
+cup_cake = Cupcake.new
+
+banana_cake.prepare
+cup_cake.prepare
